@@ -9,6 +9,8 @@ The application supports **user authentication** and **database storage via MySQ
 ✔ **Create, edit, and delete articles**  
 ✔ **MySQL database integration (via MAMP)**  
 ✔ **JavaFX modern UI**  
+✔ **Automated tests included**  
+✔ **Images folder with UI screenshots**  
 
 ---
 
@@ -49,17 +51,28 @@ The application supports **user authentication** and **database storage via MySQ
 
 ---
 
-## ⚙️ Configuration
+## 📂 Images Folder
 
-1. Open **`DB.java`** and modify the database connection settings:
-   
-   ```java
-   String url = "jdbc:mysql://localhost:8889/feodalshop_db";
-   String user = "root";
-   String password = "root";
-   ```
+The project includes an **images/** folder containing UI screenshots:
+- `img1.png` – Registration and login screen  
+- `img2.png` – Main articles page  
+- `img3.png` – Adding a new article  
+- `img.png` – Viewing an article  
 
-2. Save the file.
+These images provide a visual overview of the application's user interface.
+
+---
+
+## 🧪 Tests
+
+The project includes **automated tests** located in the `tests/` directory.  
+To run the tests, use:
+
+```sh
+mvn test
+```
+
+Make sure you have a test database configured before running the tests.
 
 ---
 
@@ -94,6 +107,7 @@ The application supports **user authentication** and **database storage via MySQ
 - **JavaFX 17**
 - **MySQL (via MAMP)**
 - **Maven**
+- **JUnit for testing**
 
 ---
 
