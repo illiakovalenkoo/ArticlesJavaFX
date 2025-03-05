@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #343434;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.feodal.feodalshop.controllers.FullArticleController">
+    <children>
+        <Label fx:id="title" layoutY="67.0" prefHeight="47.0" prefWidth="600.0" style="-fx-padding: 5 20;" text="New article" textFill="WHITE" AnchorPane.bottomAnchor="270.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="67.0">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <Label fx:id="intro" alignment="TOP_LEFT" layoutY="128.0" prefHeight="272.0" prefWidth="600.0" style="-fx-padding: 0 20;" text="New article" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="130.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+      <Button fx:id="back_btn" focusTraversable="false" layoutX="21.0" layoutY="27.0" mnemonicParsing="false" stylesheets="@../../../styles/main.css" text="Back" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+    </children>
+</AnchorPane>

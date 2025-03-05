@@ -1,0 +1,14 @@
+.text-input {
+    -fx-text-fill: #FAFAFA;
+    -fx-control-inner-background: #343434;
+    -fx-background-color: transparent;
+    -fx-prompt-text-fill: #A1A1A1;
+    -fx-border-color: #FAFAFA;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.text-input:hover {
+    -fx-border-color: #E06249;
+}
+
