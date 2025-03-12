@@ -8,8 +8,8 @@
 
 To run this project, you need to have:
 
-- **Java Development Kit (JDK) 17+** installed. Download from [Adoptium JDK](https://adoptium.net/) or use OpenJDK.
-- **JavaFX SDK 17** installed. Download from [Gluon JavaFX](https://gluonhq.com/products/javafx/) or [OpenJFX](https://openjfx.io/).
+- **Java Development Kit (JDK) 23+** installed. Download from [Adoptium JDK](https://adoptium.net/) or use OpenJDK.
+- **JavaFX SDK 23** installed. Download from [Gluon JavaFX](https://gluonhq.com/products/javafx/) or [OpenJFX](https://openjfx.io/).
 - **MySQL Database** installed. You can use [MAMP](https://www.mamp.info/en/) for an easy setup on macOS or Windows.
 
 ### **Setting Up the MySQL Database with MAMP**
@@ -106,23 +106,14 @@ To run this project, you need to have:
 ```
 ArticlesJavaFX/                     # Root project directory
 │── src/                            # Source code of the application
-│   └── feodalShop/                 # Main application package
-│       ├── Main.java               # Entry point of the application
-│       ├── controllers/            # Controllers for handling UI logic
-│       ├── models/                 # Data models representing entities
-│       ├── views/                  # FXML files for UI layouts
-│       └── utils/                  # Utility classes (e.g., database connection)
 │── images/                         # Screenshots and images for documentation
-│── doc/                            # Documentation files
-│── README.md                       # Project documentation
-│── pom.xml                         # Maven configuration file
-└── .gitignore                      # Git ignore file
+│── doc/                            # README.md file
 ```
 
 ## 4. Technologies Used
 
-- **Java 17+**
-- **JavaFX 17**
+- **Java 23+**
+- **JavaFX 23**
 - **MySQL** (via MAMP)
 - **Maven** (for project management)
 - **JUnit** (for testing)
