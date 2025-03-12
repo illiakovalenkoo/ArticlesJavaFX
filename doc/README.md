@@ -1,117 +1,147 @@
-# 📖 Project Overview
-**FeodalShop** is a **JavaFX-based** application that allows users to create and manage articles.  
-The application supports **user authentication** and **database storage via MySQL (MAMP)**.  
+# FeodalShop - JavaFX Article Management Application
 
----
+**FeodalShop** is a JavaFX-based application that allows users to create and manage articles. The application supports **user authentication** and **database storage via MySQL**.
 
-## 🚀 Features
-✔ **User registration and authentication**  
-✔ **Create, edit, and delete articles**  
-✔ **MySQL database integration (via MAMP)**  
-✔ **JavaFX modern UI**  
-✔ **Automated tests included**  
-✔ **Images folder with UI screenshots**  
+## 1. How to Download and Run the Project
 
----
+### **Prerequisites**
 
-## 🛠 How It Works
-1. **Register or log in** to the system.
-2. **Create an article** by entering the title and content.
-3. **Save the article** to the MySQL database.
-4. **View and manage** articles via the UI.
+To run this project, you need to have:
 
-**Example:**
-- User **logs in** and adds an article titled **"My First Post"**.
-- The article is saved in the database.
-- The user can **edit or delete** the article.
+- **Java Development Kit (JDK) 17+** installed. Download from [Adoptium JDK](https://adoptium.net/) or use OpenJDK.
+- **JavaFX SDK 17** installed. Download from [Gluon JavaFX](https://gluonhq.com/products/javafx/) or [OpenJFX](https://openjfx.io/).
+- **MySQL Database** installed. You can use [MAMP](https://www.mamp.info/en/) for an easy setup on macOS or Windows.
 
----
+### **Setting Up the MySQL Database with MAMP**
 
-## 📦 System Requirements
+1. **Install MAMP**:
 
-### **1️⃣ Java Development Kit (JDK)**
-- Download **JDK 17+**: [Adoptium JDK](https://adoptium.net/)  
-- Verify installation:
-  
+   - Download and install MAMP from the [official website](https://www.mamp.info/en/).
+
+2. **Start MAMP**:
+
+   - Open the MAMP application and click on "Start Servers".
+
+3. **Access phpMyAdmin**:
+
+   - Click on "Open WebStart page" in MAMP.
+   - Navigate to the "Tools" section and select "phpMyAdmin".
+
+4. **Create a New Database**:
+
+   - In phpMyAdmin, go to the "Databases" tab.
+   - Enter a name for your database (e.g., `feodalshop_db`) and click "Create".
+
+5. **Create the Necessary Tables**:
+
+   - Select the newly created database.
+   - Go to the "SQL" tab and execute the following SQL statements to create the required tables:
+
+     ```sql
+     CREATE TABLE users (
+         id INT AUTO_INCREMENT PRIMARY KEY,
+         username VARCHAR(50) NOT NULL UNIQUE,
+         password VARCHAR(255) NOT NULL
+     );
+
+     CREATE TABLE articles (
+         id INT AUTO_INCREMENT PRIMARY KEY,
+         title VARCHAR(255) NOT NULL,
+         content TEXT NOT NULL,
+         author_id INT,
+         FOREIGN KEY (author_id) REFERENCES users(id)
+     );
+     ```
+
+### **Clone the Repository**
+
+1. **Download the repository**:
+
+   ```sh
+   git clone https://github.com/illiakovalenkoo/ArticlesJavaFX.git
+   cd ArticlesJavaFX
+   ```
+
+### **Configure the Application**
+
+1. **Set Database Connection Properties**:
+
+   - Locate the configuration file (e.g., `config.properties`) in the `src/feodalShop` directory.
+   - Update the database connection properties to match your MySQL setup:
+
+     ```
+     db.url=jdbc:mysql://localhost:3306/feodalshop_db
+     db.username=root
+     db.password=root
+     ```
+
+### **Run the Application**
+
+- **Option 1: Using the `.jar` file**:
+
   ```sh
-  java -version
+  java -jar feodalShop.jar
   ```
 
-### **2️⃣ JavaFX SDK**
-- Download **JavaFX 17 SDK**: [Gluon JavaFX](https://gluonhq.com/products/javafx/)  
-- Extract and set up JavaFX libraries.
+  If JavaFX is missing, use:
 
-### **3️⃣ MySQL (via MAMP)**
-- Install **MAMP**: [Download MAMP](https://www.mamp.info/en/)  
-- Create the database using:
-  
-  ```sql
-  CREATE DATABASE feodalshop_db;
+  ```sh
+  java --module-path "path_to_javafx_sdk/lib" --add-modules javafx.controls,javafx.fxml -jar "path_to_project/feodalShop.jar"
   ```
 
----
+- **Option 2: Using an IDE**:
 
-## 📂 Images Folder
+  - Open the project in your preferred IDE (e.g., IntelliJ IDEA).
+  - Ensure that the JavaFX SDK is properly configured in your project settings.
+  - Run the `Main` class located in the `src/feodalShop` directory.
 
-The project includes an **images/** folder containing UI screenshots:
-- `img1.png` – Registration and login screen  
-- `img2.png` – Main articles page  
-- `img3.png` – Adding a new article  
-- `img.png` – Viewing an article  
+## 2. First-Time Execution Issues
 
-These images provide a visual overview of the application's user interface.
+- **Java not installed** → Install **JDK 17+**.
+- **JavaFX not found** → Install JavaFX SDK and configure it in your environment.
+- **MySQL database not configured** → Ensure MySQL is running, and the database along with the necessary tables are created as described above.
 
----
+## 3. Project Structure
 
-## 🧪 Tests
-
-The project includes **automated tests** located in the `tests/` directory.  
-To run the tests, use:
-
-```sh
-mvn test
+```
+ArticlesJavaFX/                     # Root project directory
+│── src/                            # Source code of the application
+│   └── feodalShop/                 # Main application package
+│       ├── Main.java               # Entry point of the application
+│       ├── controllers/            # Controllers for handling UI logic
+│       ├── models/                 # Data models representing entities
+│       ├── views/                  # FXML files for UI layouts
+│       └── utils/                  # Utility classes (e.g., database connection)
+│── images/                         # Screenshots and images for documentation
+│── doc/                            # Documentation files
+│── README.md                       # Project documentation
+│── pom.xml                         # Maven configuration file
+└── .gitignore                      # Git ignore file
 ```
 
-Make sure you have a test database configured before running the tests.
+## 4. Technologies Used
 
----
-
-## 💻 How to Run the Application
-
-### **Option 1: Running from IntelliJ IDEA**
-1. Open the project in **IntelliJ IDEA**.
-2. Ensure **JavaFX SDK and MySQL Connector JARs** are loaded in dependencies.
-3. Run the **`HelloApplication`** class.
-
-### **Option 2: Running as a JAR**
-1. **Build the project** using Maven:
-   
-   ```sh
-   mvn clean package
-   ```
-
-2. **Run the JAR file**:
-   
-   ```sh
-   java --module-path "C:\path\to\javafx-sdk-17.0.2\lib" --add-modules javafx.controls,javafx.fxml -jar target/feodalShop.jar
-   ```
-
-### **Option 3: Running as an EXE (Windows)**
-1. Use **Launch4j** to generate an .exe file.
-2. Run **feodalShop.exe**.
-
----
-
-## 🛠 Built With
 - **Java 17+**
 - **JavaFX 17**
-- **MySQL (via MAMP)**
-- **Maven**
-- **JUnit for testing**
+- **MySQL** (via MAMP)
+- **Maven** (for project management)
+- **JUnit** (for testing)
 
----
+## 5. Application Testing
 
-## 📜 License
-This project is licensed under the **MIT License** – feel free to use and modify it.  
+The application has been tested for:
+
+- **User authentication and registration**
+- **Database integration with MySQL**
+- **Creating, editing, and deleting articles**
+- **Graphical interface responsiveness**
+
+### `images/` Folder
+
+Screenshots and other images related to the application's UI and functionality are stored in the `images/` folder.
+
+## 6. License
+
+This project is licensed under the **MIT License**. You are free to use, modify, and distribute this software with no restrictions. The software is provided "as is", without warranty of any kind.
 
 🚀 **Happy coding!**
