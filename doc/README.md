@@ -131,6 +131,8 @@ The application has been tested for:
 
 Screenshots and other images related to the application's UI and functionality are stored in the `images/` folder.
 
+img.png - After click on some article we can see whole information only in this article
+
 ## 6. License
 
 This project is licensed under the **MIT License**. You are free to use, modify, and distribute this software with no restrictions. The software is provided "as is", without warranty of any kind.
