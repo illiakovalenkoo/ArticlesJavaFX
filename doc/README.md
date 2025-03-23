@@ -132,6 +132,9 @@ The application has been tested for:
 Screenshots and other images related to the application's UI and functionality are stored in the `images/` folder.
 
 img.png - After click on some article we can see whole information only in this article
+img1.png
+img2.png
+img3.png
 
 ## 6. License
 
