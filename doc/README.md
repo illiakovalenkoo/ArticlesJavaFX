@@ -131,10 +131,10 @@ The application has been tested for:
 
 Screenshots and other images related to the application's UI and functionality are stored in the `images/` folder.
 
-img.png - After click on some article we can see whole information only in this article
-img1.png
-img2.png
-img3.png
+img_1.png - After program started and user did not authorized in application, then he see this enter window with 2 options: "Sign up"(possibility to create new account) and "Sign in"(if user had created account before).
+img_2.png - After successful signing in, user can see all articles that are in database and also 2 buttons - "Add article" and "Exit from" user account
+img_3.png - If user decided to click on any artcile, then he can see all information about this article with possibility to move back - button "Back"
+img_4.png - If user decied to click on button "Add article" then he can enter full information about in new article
 
 ## 6. License
 
